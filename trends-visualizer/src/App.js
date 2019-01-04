@@ -20,7 +20,7 @@ class App extends Component {
  }
 
  componentDidMount() {
-  const rand = Math.round(Math.random() * (3000 - 500)) + 500;
+  const rand = Math.round(Math.random() * (3000 - 500)) + 600;
   this.interval = setInterval(() => this.onUpdateItem(), rand);
 }
 componentWillUnmount() {
@@ -45,6 +45,7 @@ handleShowLess() {
   })
 }
   //randomize
+  //push to a used grid
   //https://stackoverflow.com/questions/22467842/assign-random-picked-color-with-javascript
  colorStyle(index){
   return colors[index];
