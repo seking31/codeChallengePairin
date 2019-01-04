@@ -45,6 +45,7 @@ handleShowLess() {
   })
 }
   //randomize
+  //https://stackoverflow.com/questions/22467842/assign-random-picked-color-with-javascript
  colorStyle(index){
   return colors[index];
 }
