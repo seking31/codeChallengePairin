@@ -28,7 +28,7 @@ componentWillUnmount() {
 }
 
  handleShowMore() {
-  const { showItems, names } = this.state;
+  let { showItems } = this.state;
   this.setState({
     showItems: 
     showItems >= colors.length ?
@@ -37,17 +37,18 @@ componentWillUnmount() {
 }
 
 handleShowLess() {
-  const { showItems, names } = this.state;
+  let { showItems, names } = this.state;
   this.setState({
     showItems: 
     showItems >= names.length ?
     showItems : showItems - 1
   })
 }
-
+  //randomize
  colorStyle(index){
   return colors[index];
 }
+
 
 onUpdateItem = () => {
   let { showItems, names } = this.state;
@@ -56,7 +57,6 @@ onUpdateItem = () => {
   let newItem = names[Math.floor(Math.random()*names.length)];
   this.setState(state => {
      names = names.map((item) => {
-      //make sure item is not in itemArray
       if(item === replacedItem){
         return replacedItem = newItem;
       } else {

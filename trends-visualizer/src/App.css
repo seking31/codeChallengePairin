@@ -27,18 +27,17 @@ button{
   justify-content: center;
 }
 
-@-webkit-keyframes typing { from { width: 0; } }
-@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
-
 h1 { 
+	font-size:2vw;
   color: white;
-	font-family: 'Roboto', Arial, sans-serif;
 	border-right: .1em solid white;
-	width: 16.5em; 
 	width: 21ch;
 	margin: 2em 1em;
 	white-space: nowrap;
 	overflow: hidden;
-	-webkit-animation: typing 7s steps(21, end),
+	-webkit-animation: typing 5s steps(21, end),
 	           blink-caret .5s step-end infinite alternate;
 }
+
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
