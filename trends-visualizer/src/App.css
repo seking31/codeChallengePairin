@@ -21,6 +21,34 @@ button{
   height: 100vh;
 }
 
+.wrapper4 {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper3 {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper2 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper1 {
+  display: grid;
+  grid-template-columns: 100%;
+  width: 100vw;
+  height: 100vh;
+}
+
 .buttonWrapper {
   display: flex;
   align-items: center;
