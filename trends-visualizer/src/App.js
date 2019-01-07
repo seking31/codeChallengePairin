@@ -12,10 +12,10 @@ class App extends Component {
    this.state = {
     names,
     showItems: 25,
-    wapperCssClass: 'wrapper'
+    wapperCssClass: 'wrapper5'
   };
-  this.handleShowMoreColumns = this.handleShowMoreColumns.bind(this);
-  this.handleShowLessColumns = this.handleShowLessColumns.bind(this);
+   this.handleShowMoreColumns = this.handleShowMoreColumns.bind(this);
+   this.handleShowLessColumns = this.handleShowLessColumns.bind(this);
    this.handleShowMoreBoxes = this.handleShowMoreBoxes.bind(this);
    this.handleShowLessBoxes = this.handleShowLessBoxes.bind(this);
    this.onUpdateItem = this.onUpdateItem.bind(this);
@@ -50,16 +50,26 @@ handleShowLessBoxes() {
 
 handleShowMoreColumns() {
   let { wapperCssClass } = this.state;
-  this.setState({
-    wapperCssClass : "wrapper"
-})
+  let theNum = Number(wapperCssClass.match(/\d+/)) +1;
+  if(theNum === 6){
+    alert("Number of columns too high");
+  } else{
+    this.setState({
+      wapperCssClass : "wrapper" + theNum.toString()
+    })
+  }
 }
 
 handleShowLessColumns() {
   let { wapperCssClass } = this.state;
-  this.setState({
-    wapperCssClass : "wrapper4"
-})
+  let theNum =  Number(wapperCssClass.match(/\d+/)) -1;
+  if(theNum === 0){
+    alert("Number of columns too low");
+  } else{
+    this.setState({
+      wapperCssClass : "wrapper" + theNum.toString()
+    })
+  }
 }
   //randomize
   //push to a used grid
