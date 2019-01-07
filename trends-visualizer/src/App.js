@@ -22,6 +22,7 @@ class App extends Component {
    this.colorStyle = this.colorStyle.bind(this);
    this.newcolorStyleArray = this.newcolorStyleArray.bind(this); 
    this.updateBackgroundColor = this.updateBackgroundColor.bind(this);
+   this.checkIfUnique = this.checkIfUnique.bind(this);
  }
 
  componentDidMount() {
@@ -93,11 +94,23 @@ colorStyle(index){
   return newColorsArray[index];
 }
 
+checkIfUnique(newItemIndex){
+  let newColorsArray = [...this.state.newColorsArray]
+  let newColor = colors[Math.floor(Math.random()*colors.length)]
+  while(newColor === newColorsArray[newItemIndex +1] ||
+    newColor === newColorsArray[newItemIndex -1] ||
+    newColor === newColorsArray[newItemIndex +5] ||
+    newColor === newColorsArray[newItemIndex -5]){
+    newColor = colors[Math.floor(Math.random()*colors.length)]
+  }
+  return newColor;
+}
+
 updateBackgroundColor(newItemIndex){
   // logic to compare new colors with adjacent 
-  const newColor = colors[Math.floor(Math.random()*colors.length)];
+  const newColor = this.checkIfUnique(newItemIndex)
   let newColorsArray = [...this.state.newColorsArray]
-  newColorsArray[newItemIndex] = newColor
+  newColorsArray[newItemIndex] =  newColor
   this.setState({
     newColorsArray 
   })
