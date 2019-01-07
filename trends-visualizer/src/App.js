@@ -128,9 +128,9 @@ textBox(){
 let { showItems, names, wrapperCssClass } = this.state;
 let newArray = names.slice(0, showItems);
   return (
-   <div className={wrapperCssClass}>
+   <div className={`wrapper ${wrapperCssClass}`}>
       {newArray.map((item, index) => (
-        <div className="textBox" key={item + index} style={{background:this.colorStyle(index)}}><h1>{item}</h1></div>
+        <div key={item + index} style={{background:this.colorStyle(index)}}><h1>{item}</h1></div>
       ))}
   </div>
   );
