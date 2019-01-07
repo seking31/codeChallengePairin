@@ -76,16 +76,15 @@ handleShowLessColumns() {
   }
 }
 
-newcolorStyleArray(a){
-let j, x, i;
-  for (i = a.length - 1; i > 0; i--) {
-    j = Math.floor(Math.random() * (i + 1));
-    x = a[i];
-    a[i] = a[j];
-    a[j] = x;
-  }
+newcolorStyleArray(array){
+for (var i = array.length - 1; i > 0; i--) {
+  var j = Math.floor(Math.random() * i);
+  var temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+}
   this.setState({
-    newColorsArray : a
+    newColorsArray : array
   }) 
 }
 
@@ -95,6 +94,7 @@ colorStyle(index){
 }
 
 updateBackgroundColor(newItemIndex){
+  // logic to compare new colors with adjacent colors
   const newColor = colors[Math.floor(Math.random()*colors.length)];
   let newColorsArray = [...this.state.newColorsArray]
   newColorsArray[newItemIndex] = newColor
