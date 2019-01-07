@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import names from './animal_names.json';
 
 const colors = ["orange", "CornflowerBlue", "Aquamarine", "gray", "pink", "DarkCyan ", "CadetBlue", "silver", "salmon", "black", "orange", "CornflowerBlue", "Aquamarine", "gray", "pink", "DarkCyan ", "CadetBlue", "silver", "salmon", "black","orange", "CornflowerBlue", "Aquamarine", "gray", "pink", "DarkCyan ", "CadetBlue", "silver", "salmon", "black"];
-var names = ["mandrill","ground hog","chimpanzee","squirrel","panther","warthog","kitten","wolf","monkey","ferret","anteater","coyote","polar bear","zebra","mountain goat","vicuna","horse","dromedary","puma","ape","canary","steer","guinea pig","wombat","opossum","deer","kangaroo","jaguar","seal","okapi","leopard","walrus","gorilla","crocodile","eagle owl","thorny devil","parrot","chameleon","budgerigar","lamb","alpaca","dingo","eland","baboon","mongoose","donkey","cheetah","camel","marmoset","chipmunk","antelope","beaver","silver fox","capybara","lovebird","aardvark","ibex","dog","waterbuck","bald eagle","cat","gila monster","duckbill platypus","buffalo","starfish","pronghorn","mouse","orangutan","shrew","ocelot","weasel","bear","chinchilla","lemur","musk-ox","hartebeest","grizzly bear","dormouse","gemsbok","meerkat","bumble bee","doe","fox","marten","llama","argali","porpoise","bat","finch","chamois","bull","lizard","coati","fawn","hyena","parakeet","yak","pony","woodchuck","peccary","cow","ewe","ox","ermine","skunk","goat","sheep","raccoon","rooster","salamander","hamster","alligator","colt","bison","frog","giraffe","hedgehog","crow","guanaco","jackal","rat","lion","gnu","rhinoceros","puppy","gazelle","bighorn","mule","mink","panda","octopus","aoudad","basilisk","badger","ram","lynx","prairie dog","dugong","elk","snake","porcupine","springbok","burro","mustang","oryx","otter","pig","blue crab","stallion","gopher","impala","bunny","dung beetle","fish","tiger","hog","wildcat","mole","tapir","hare","turtle","addax","quagga","koala","civet","iguana","jerboa","snowy owl","muskrat","rabbit","mare","elephant","hippopotamus","wolverine","boar","cougar","zebu","mynah bird","whale","musk deer","reindeer","highland cow","chicken","armadillo","sloth","newt","moose","toad"];
 
 class App extends Component {
  constructor(props){
@@ -59,7 +59,7 @@ handleShowMoreColumns() {
     alert("Number of columns too high");
   } else{
     this.setState({
-      wrapperCssClass : "wrapper" + theNum.toString()
+      wrapperCssClass : `wrapper${theNum.toString()}`
     })
   }
 }
@@ -71,7 +71,7 @@ handleShowLessColumns() {
     alert("Number of columns too low");
   } else{
     this.setState({
-      wrapperCssClass : "wrapper" + theNum.toString()
+      wrapperCssClass : `wrapper${theNum.toString()}`
     })
   }
 }
@@ -94,7 +94,7 @@ colorStyle(index){
 }
 
 updateBackgroundColor(newItemIndex){
-  // logic to compare new colors with adjacent colors
+  // logic to compare new colors with adjacent 
   const newColor = colors[Math.floor(Math.random()*colors.length)];
   let newColorsArray = [...this.state.newColorsArray]
   newColorsArray[newItemIndex] = newColor
@@ -136,26 +136,26 @@ let newArray = names.slice(0, showItems);
   );
 }
 
- render() {
+  render() {
     return (
       <div className="App">
-      <div className="buttonWrapper">
-      <button onClick={this.handleShowMoreBoxes}>
-          Show more boxes!
-        </button>
-        <button onClick={this.handleShowLessBoxes}>
-          Show less boxes!
-        </button>
-        <button onClick={this.handleShowMoreColumns}>
-          Show more columns!
-        </button>
-        <button onClick={this.handleShowLessColumns}>
-          Show less columns!
-        </button>
-      </div>
+        <div className="buttonWrapper">
+          <button onClick={this.handleShowMoreBoxes}>
+            Show more boxes!
+          </button>
+          <button onClick={this.handleShowLessBoxes}>
+           Show less boxes!
+          </button>
+          <button onClick={this.handleShowMoreColumns}>
+           Show more columns!
+          </button>
+          <button onClick={this.handleShowLessColumns}>
+           Show less columns!
+          </button>
+        </div>
        { this.textBox() }  
       </div>
-    );
+    )
   }
 }
 
