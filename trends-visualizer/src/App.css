@@ -1,7 +1,4 @@
 *{
-  box-sizing: border-box;
-  padding: 0;
-	margin: 0;
 	font-family: 'Roboto', Arial, sans-serif;
 }
 
@@ -10,13 +7,14 @@ button{
   text-align: center;
 	padding: 20px;
 	font-size: 20px;
-	margin: 5px;
+	margin: 7px;
 	width: 20%;
 }
 
 .wrapper5 {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 17% 17% 17% 17% 17%;
   width: 100vw;
   height: 100vh;
 }
@@ -55,6 +53,10 @@ button{
   justify-content: center;
 }
 
+.textBox{
+
+}
+
 h1 { 
 	font-size:2vw;
   color: white;
@@ -69,3 +71,5 @@ h1 {
 
 @-webkit-keyframes typing { from { width: 0; } }
 @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+
