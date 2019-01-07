@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import names from './animal_names.json';
 
-const colors = ["orange", "CornflowerBlue", "Aquamarine", "gray", "pink", "DarkCyan ", "CadetBlue", "silver", "salmon", "black", "orange", "CornflowerBlue", "Aquamarine", "gray", "pink", "DarkCyan ", "CadetBlue", "silver", "salmon", "black","orange", "CornflowerBlue", "Aquamarine", "gray", "pink", "DarkCyan ", "CadetBlue", "silver", "salmon", "black"];
+const colors = ["orange", "CornflowerBlue", "Aquamarine", "gray", "pink", "DarkCyan ", "CadetBlue", "silver", "salmon", "black", "lavender", "darkmagenta", "darkorchid", "indigo", "mediumvioletred", "darkslategray", "lightslategray", "rosybrown", "maroon", "seagreen","teal", "darkcyan", "lightseagreen", "cadetblue", "navy", "blue ", "steelblue", "deepskyblue", "darkblue", "skyblue"];
 
 class App extends Component {
  constructor(props){
@@ -97,6 +97,7 @@ colorStyle(index){
 checkIfUnique(newItemIndex){
   let newColorsArray = [...this.state.newColorsArray]
   let newColor = colors[Math.floor(Math.random()*colors.length)]
+  console.log(newColor,newColorsArray[newItemIndex +1])
   while(newColor === newColorsArray[newItemIndex +1] ||
     newColor === newColorsArray[newItemIndex -1] ||
     newColor === newColorsArray[newItemIndex +5] ||
@@ -107,7 +108,6 @@ checkIfUnique(newItemIndex){
 }
 
 updateBackgroundColor(newItemIndex){
-  // logic to compare new colors with adjacent 
   const newColor = this.checkIfUnique(newItemIndex)
   let newColorsArray = [...this.state.newColorsArray]
   newColorsArray[newItemIndex] =  newColor
@@ -166,7 +166,8 @@ let newArray = names.slice(0, showItems);
            Show less columns!
           </button>
         </div>
-       { this.textBox() }  
+        <div>{ this.textBox() }  </div>
+        
       </div>
     )
   }

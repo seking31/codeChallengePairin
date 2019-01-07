@@ -52,12 +52,24 @@ h1 {
 	margin: 2em 1em;
 	white-space: nowrap;
 	overflow: hidden;
-	-webkit-animation: typing 5s steps(21, end),
+	-webkit-animation: typing 5s steps(30, end),
 	           blink-caret .5s step-end infinite alternate;
 }
 
 @-webkit-keyframes typing { from { width: 0; } }
 @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
 
+.animate {
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  transition: all 5s ease;
+  position: absolute;
+  left: 0;
+}
 
-
+.animate.move {
+  left: 100%;   /*or bottom, top, right*/
+  margin-left: -100px; /*or bottom, top, right */
+}
